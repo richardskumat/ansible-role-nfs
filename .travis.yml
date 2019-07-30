@@ -4,12 +4,16 @@ services: docker
 
 env:
   global:
-    - ROLE_NAME: nfs
+    - ROLE_NAME: ansible-role-nfs
+    - GALAXY_USERNAME: richardskumat
+    - GALAXY_ROLENAME: ansible_role_nfs
   matrix:
     - MOLECULE_DISTRO: centos7
     - MOLECULE_DISTRO: centos6
     - MOLECULE_DISTRO: ubuntu1804
     - MOLECULE_DISTRO: ubuntu1604
+    - MOLECULE_DISTRO: debian9
+    - MOLECULE_DISTRO: debian10
 
 install:
   # Install test dependencies.
@@ -18,8 +22,8 @@ install:
 before_script:
   # Use actual Ansible Galaxy role name for the project directory.
   - cd ../
-  - mv ansible-role-$ROLE_NAME geerlingguy.$ROLE_NAME
-  - cd geerlingguy.$ROLE_NAME
+  - mv ansible-role-$ROLE_NAME $GALAXY_USERNAME.$ROLE_NAME
+  - cd $GALAXY_USERNAME.$ROLE_NAME
 
 script:
   # Run tests.

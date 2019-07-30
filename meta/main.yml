@@ -2,9 +2,9 @@
 dependencies: []
 
 galaxy_info:
-  author: geerlingguy
+  author: richardskumat
   description: NFS installation for Linux.
-  company: "Midwestern Mac, LLC"
+  company: "none"
   license: "license (BSD, MIT)"
   min_ansible_version: 2.4
   platforms:
@@ -20,10 +20,4 @@ galaxy_info:
     - name: Ubuntu
       versions:
         - all
-  galaxy_tags:
-    - system
-    - nfs
-    - filesystem
-    - share
-    - nfsv4
-    - efs
+  galaxy_tags: []

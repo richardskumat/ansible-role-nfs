@@ -10,8 +10,8 @@ env:
   matrix:
     - MOLECULE_DISTRO: centos:7
     - MOLECULE_DISTRO: centos:6
-    - MOLECULE_DISTRO: ubuntu:1804
-    - MOLECULE_DISTRO: ubuntu:1604
+    - MOLECULE_DISTRO: ubuntu:18.04
+    - MOLECULE_DISTRO: ubuntu:16.04
     - MOLECULE_DISTRO: debian:9
     - MOLECULE_DISTRO: debian:10
 

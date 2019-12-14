@@ -1,8 +1,10 @@
 # Ansible Role: NFS
 
-[![Build Status](https://travis-ci.org/geerlingguy/ansible-role-nfs.svg?branch=master)](https://travis-ci.org/geerlingguy/ansible-role-nfs)
+[![Build Status](https://travis-ci.org/richardskumat/ansible-role-nfs.svg?branch=master)](https://travis-ci.org/richardskumat/ansible-role-nfs)
 
 Installs NFS utilities on RedHat/CentOS or Debian/Ubuntu.
+
+This is a personal fork of [geerlingguy/ansible-role-nfs](https://github.com/richardskumat/ansible-role-nfs).
 
 ## Requirements
 
@@ -20,6 +22,13 @@ A list of exports which will be placed in the `/etc/exports` file. See Ubuntu's 
     nfs_rpcbind_enabled: true
 
 (RedHat/CentOS/Fedora only) The state of the `rpcbind` service, and whether it should be enabled at system boot.
+
+    RPCMOUNTDOPTS_OPTIONS: '"--manage-gids"'
+
+Options for rpc.mountd for a templating task for Debian based distros.
+
+Added so that a static port can be set for rpc.mountd.
+
 
 ## Dependencies
 

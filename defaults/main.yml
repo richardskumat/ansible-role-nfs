@@ -8,4 +8,4 @@ nfs_rpcbind_enabled: true
 RPCMOUNTDOPTS_OPTIONS: '"--manage-gids"'
 # add --port 1234 for a static port
 # useful for port-based firewalls
-#RPCMOUNTDOPTS_OPTIONS: '"--manage-gids --port 1234"'
+# RPCMOUNTDOPTS_OPTIONS: '"--manage-gids --port 1234"'

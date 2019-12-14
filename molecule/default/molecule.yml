@@ -9,7 +9,7 @@ lint:
     config-file: molecule/default/yaml-lint.yml
 platforms:
   - name: instance
-    image: "${MOLECULE_DISTRO:-debian:9}"
+    image: "${MOLECULE_DISTRO:-debian:10}"
 provisioner:
   name: ansible
   log: true

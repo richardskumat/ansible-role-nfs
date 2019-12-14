@@ -4,13 +4,8 @@
 image: qwe1/dind-ansible-molecule:latest
 
 variables:
-  DOCKER_HOST: tcp://docker:2375/
   DOCKER_DRIVER: overlay2
-  # https://gitlab.com/gitlab-org/gitlab-ce/issues/64959
-  # 19.03 had some breaking changes compared to 18.09
-  # https://gitlab.com/gitlab-org/gitlab-ce/issues/19199
-  # https://gitlab.com/gitlab-org/gitlab-ce/issues/19199#note_73264567
-  DOCKER_TLS_CERTDIR: ""
+  DOCKER_TLS_CERTDIR: "/certs"
   ROLE_NAME: ansible-role-nfs
   GALAXY_USERNAME: richardskumat
   GALAXY_ROLENAME: ansible_role_nfs

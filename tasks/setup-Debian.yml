@@ -5,3 +5,10 @@
       - nfs-common
       - nfs-kernel-server
     state: present
+
+- name: Template /etc/default/nfs-kernel-server on Debian
+  template:
+    src: templates/nfs-kernel-server.j2
+    dest: /etc/default/nfs-kernel-server
+    mode: 0644
+    backup: 'no'

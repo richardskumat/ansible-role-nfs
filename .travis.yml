@@ -1,9 +1,11 @@
 ---
-language: python
+language: python3.7
 services: docker
 
 env:
   global:
+    # https://docs.docker.com/engine/api/
+    - DOCKER_API_VERSION: 1.38
     - ROLE_NAME: ansible-role-nfs
     - GALAXY_USERNAME: richardskumat
     - GALAXY_ROLENAME: ansible_role_nfs

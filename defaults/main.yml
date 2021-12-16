@@ -11,4 +11,4 @@ RPCMOUNTDOPTS_OPTIONS: '"--manage-gids"'
 # RPCMOUNTDOPTS_OPTIONS: '"--manage-gids --port 1234"'
 
 # set a default value here
-rsk_nfs_dir_perm: '0755'
+nfs_dir_perm: '0755'

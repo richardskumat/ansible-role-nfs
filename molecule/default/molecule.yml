@@ -9,14 +9,17 @@ lint: |
   ansible-lint
 platforms:
   - name: instance
-    # image: "${MOLECULE_DISTRO:-qwe1/docker-debian:11-molecule}"
-    image: "${MOLECULE_DISTRO:-qwe1/playground:latest}"
+    image: "${MOLECULE_DISTRO:-qwe1/docker-debian:11-molecule}"
+    tmpfs:
+      - /run
+      - /tmp
     privileged: true
     pre_build_image: true
-    command: ${MOLECULE_DOCKER_COMMAND:-""}
+    # command: ${MOLECULE_DOCKER_COMMAND:-""}
     pull: true
-    volumes:
-      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    override_command: false
+    # volumes:
+    #  - /sys/fs/cgroup:/sys/fs/cgroup:ro
 provisioner:
   name: ansible
   log: true

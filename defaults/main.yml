@@ -5,10 +5,10 @@ nfs_rpcbind_state: started
 nfs_rpcbind_enabled: true
 
 # default value
-RPCMOUNTDOPTS_OPTIONS: '"--manage-gids"'
+rpcmountdopts_options: '"--manage-gids"'
 # add --port 1234 for a static port
 # useful for port-based firewalls
-# RPCMOUNTDOPTS_OPTIONS: '"--manage-gids --port 1234"'
+# rpcmountdopts_options: '"--manage-gids --port 1234"'
 
 # set a default value here
 nfs_dir_perm: '0755'

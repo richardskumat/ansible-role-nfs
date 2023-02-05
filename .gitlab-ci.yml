@@ -1,6 +1,4 @@
 ---
-# use my own docker:stable image that has
-# ansible and molecule added
 image: qwe1/dind-ansible-molecule:latest
 
 variables:

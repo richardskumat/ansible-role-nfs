@@ -23,12 +23,11 @@ A list of exports which will be placed in the `/etc/exports` file. See Ubuntu's 
 
 (RedHat/CentOS/Fedora only) The state of the `rpcbind` service, and whether it should be enabled at system boot.
 
-    RPCMOUNTDOPTS_OPTIONS: '"--manage-gids"'
+    rpcmountdopts_options: '"--manage-gids"'
 
 Options for rpc.mountd for a templating task for Debian based distros.
 
 Added so that a static port can be set for rpc.mountd.
-
 
 ## Dependencies
 

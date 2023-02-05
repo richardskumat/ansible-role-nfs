@@ -16,14 +16,19 @@
     - ansible_distribution == "Fedora"
 
 # Setup/install tasks.
-- include_tasks: setup-RedHat.yml
+- name: Include setup file for EL systems.
+  include_tasks: setup-RedHat.yml
   when: ansible_os_family == 'RedHat'
 
-- include_tasks: setup-Debian.yml
+- name: Include setup file for Debian systems.
+  include_tasks: setup-Debian.yml
   when: ansible_os_family == 'Debian'
 
 - name: Ensure directories to export exist
-  file: 'path="{{ item.strip().split()[0] }}" state=directory mode={{ nfs_dir_perm }}'
+  file:
+    path: '{{ item.strip().split()[0] }}'
+    state: directory
+    mode: '{{ nfs_dir_perm }}'
   with_items: "{{ nfs_exports }}"
 
 - name: Copy exports file.
@@ -33,8 +38,11 @@
     owner: root
     group: root
     mode: 0644
-  notify: reload nfs
+  notify: "reload nfs"
 
 - name: Ensure nfs is running.
-  service: "name={{ nfs_server_daemon }} state=started enabled=yes"
+  service:
+    name: '{{ nfs_server_daemon }}'
+    state: started
+    enabled: yes
   when: nfs_exports|length

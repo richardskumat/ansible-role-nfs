@@ -1,13 +1,13 @@
 ---
 - name: Ensure NFS utilities are installed.
-  apt:
+  ansible.builtin.apt:
     name:
       - nfs-common
       - nfs-kernel-server
     state: present
 
 - name: Template /etc/default/nfs-kernel-server on Debian
-  template:
+  ansible.builtin.template:
     src: templates/nfs-kernel-server.j2
     dest: /etc/default/nfs-kernel-server
     mode: 0644

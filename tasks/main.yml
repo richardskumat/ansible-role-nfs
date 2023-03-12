@@ -1,38 +1,38 @@
 ---
 # Include variables and define needed variables.
 - name: Include OS-specific variables.
-  include_vars: "{{ ansible_os_family }}.yml"
+  ansible.builtin.include_vars: "{{ ansible_os_family }}.yml"
 
 - name: Include overrides specific to RHEL 7.
-  include_vars: RedHat-7.yml
+  ansible.builtin.include_vars: RedHat-7.yml
   when:
     - ansible_os_family == 'RedHat'
     - ansible_distribution_major_version == "7"
 
 - name: Include overrides specific to Fedora.
-  include_vars: Fedora.yml
+  ansible.builtin.include_vars: Fedora.yml
   when:
     - ansible_os_family == 'RedHat'
     - ansible_distribution == "Fedora"
 
 # Setup/install tasks.
 - name: Include setup file for EL systems.
-  include_tasks: setup-RedHat.yml
+  ansible.builtin.include_tasks: setup-RedHat.yml
   when: ansible_os_family == 'RedHat'
 
 - name: Include setup file for Debian systems.
-  include_tasks: setup-Debian.yml
+  ansible.builtin.include_tasks: setup-Debian.yml
   when: ansible_os_family == 'Debian'
 
 - name: Ensure directories to export exist
-  file:
+  ansible.builtin.file:
     path: '{{ item.strip().split()[0] }}'
     state: directory
     mode: '{{ nfs_dir_perm }}'
   with_items: "{{ nfs_exports }}"
 
 - name: Copy exports file.
-  template:
+  ansible.builtin.template:
     src: exports.j2
     dest: /etc/exports
     owner: root
@@ -41,7 +41,7 @@
   notify: "Reload nfs"
 
 - name: Ensure nfs is running.
-  service:
+  ansible.builtin.service:
     name: '{{ nfs_server_daemon }}'
     state: started
     enabled: yes

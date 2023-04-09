@@ -18,6 +18,7 @@ platforms:
     # command: ${MOLECULE_DOCKER_COMMAND:-""}
     pull: true
     override_command: false
+    cgroupns_mode: host
     # volumes:
     #  - /sys/fs/cgroup:/sys/fs/cgroup:ro
 provisioner:

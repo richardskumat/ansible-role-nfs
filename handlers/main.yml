@@ -2,3 +2,5 @@
 - name: Reload nfs
   ansible.builtin.command: 'exportfs -ra'
   listen: "Reload nfs"
+  register: exportfs_output
+  changed_when: exportfs_output != 0

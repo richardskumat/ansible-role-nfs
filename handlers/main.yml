@@ -4,3 +4,10 @@
   listen: "Reload nfs"
   register: exportfs_output
   changed_when: exportfs_output != 0
+
+- name: Configure nfs-kernel-server service
+  ansible.builtin.service:
+    name: nfs-kernel-server
+    state: restarted
+    enabled: yes
+  listen: "Reload nfs"

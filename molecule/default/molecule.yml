@@ -19,8 +19,8 @@ platforms:
     pull: true
     override_command: false
     cgroupns_mode: host
-    # volumes:
-    #  - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
 provisioner:
   name: ansible
   log: true

@@ -5,6 +5,7 @@
       - nfs-common
       - nfs-kernel-server
     state: present
+    update_cache: yes
 
 - name: Template /etc/default/nfs-kernel-server on Debian
   ansible.builtin.template:

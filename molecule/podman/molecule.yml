@@ -1,0 +1,26 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: podman
+platforms:
+  - name: debian12
+    image: "docker.io/qwe1/docker-debian:12-molecule"
+    pre_build_image: true
+    pull: true
+  - name: debian11
+    image: "docker.io/qwe1/docker-debian:11-molecule"
+    pre_build_image: true
+    pull: true
+  - name: fedora38
+    image: "docker.io/qwe1/docker-el:f38"
+    pre_build_image: true
+    pull: true
+  - name: almalinux9
+    image: "docker.io/qwe1/docker-el:al9"
+    pre_build_image: true
+    pull: true
+provisioner:
+  name: ansible
+verifier:
+  name: ansible

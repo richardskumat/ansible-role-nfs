@@ -1,0 +1,5 @@
+---
+- name: Ensure NFS utilities are installed.
+  ansible.builtin.dnf:
+    name:
+      - nfs-utils

@@ -28,4 +28,25 @@ test_d11:
   variables:
     MOLECULE_DISTRO: "qwe1/docker-debian:11-molecule"
   script:
-    - molecule --debug test
+    - molecule test
+
+test_d12:
+  stage: test
+  variables:
+    MOLECULE_DISTRO: "qwe1/docker-debian:12-molecule"
+  script:
+    - molecule test
+
+test_f38:
+  stage: test
+  variables:
+    MOLECULE_DISTRO: "docker.io/qwe1/docker-el:f38"
+  script:
+    - molecule test
+
+test_el9:
+  stage: test
+  variables:
+    MOLECULE_DISTRO: "docker.io/qwe1/docker-el:al9"
+  script:
+    - molecule test

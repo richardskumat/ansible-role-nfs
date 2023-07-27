@@ -9,6 +9,10 @@
   ansible.builtin.include_tasks: setup-Debian.yml
   when: ansible_os_family == 'Debian'
 
+- name: Include setup file for RHEL systems.
+  ansible.builtin.include_tasks: setup-RedHat.yml
+  when: ansible_os_family == 'RedHat'
+
 - name: Ensure directories to export exist
   ansible.builtin.file:
     path: '{{ item.strip().split()[0] }}'

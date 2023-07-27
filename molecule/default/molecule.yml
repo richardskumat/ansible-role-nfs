@@ -9,7 +9,7 @@ lint: |
   ansible-lint
 platforms:
   - name: instance
-    image: "${MOLECULE_DISTRO:-qwe1/docker-debian:11-molecule}"
+    image: "${MOLECULE_DISTRO:-qwe1/docker-debian:12-molecule}"
     tmpfs:
       - /run
       - /tmp

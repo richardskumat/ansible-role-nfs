@@ -13,6 +13,7 @@ services:
   - docker:dind
 
 stages:
+  - lint
   - test
 
 before_script:
@@ -22,6 +23,11 @@ before_script:
   - cd ..
   - cp -aR $ROLE_NAME $GALAXY_USERNAME.$GALAXY_ROLENAME
   - cd $GALAXY_USERNAME.$GALAXY_ROLENAME
+
+lint:
+  stage: lint
+  script:
+    - ansible-lint
 
 test_d11:
   stage: test

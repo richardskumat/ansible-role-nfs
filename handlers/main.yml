@@ -7,7 +7,7 @@
 
 - name: Configure nfs-kernel-server service
   ansible.builtin.service:
-    name: nfs-kernel-server
+    name: '{{ nfs_server_daemon }}'
     state: restarted
     enabled: yes
   listen: "Reload nfs"

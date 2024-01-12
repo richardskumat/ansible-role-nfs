@@ -1,10 +1,8 @@
 # Ansible Role: NFS
 
-[![Build Status](https://travis-ci.org/richardskumat/ansible-role-nfs.svg?branch=master)](https://travis-ci.org/richardskumat/ansible-role-nfs)
-
 Installs NFS utilities on RedHat/CentOS or Debian/Ubuntu.
 
-This is a personal fork of [geerlingguy/ansible-role-nfs](https://github.com/richardskumat/ansible-role-nfs).
+This is a personal fork of geerlingguy's ansible-role-nfs.
 
 ## Requirements
 
